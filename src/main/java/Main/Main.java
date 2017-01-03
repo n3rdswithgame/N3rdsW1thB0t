@@ -12,5 +12,6 @@ package Main;
 public class Main {
    public static void main(String[] args){ // entry point
        System.out.println("I am Bender, please insert girder");
+       //Trying to get Maven to work with github
    }
 }
