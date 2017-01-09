@@ -15,6 +15,9 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 
+import java.io.File;
+import java.util.Scanner;
+
 /**
  *
  * @author N3rdsWithGame
@@ -22,9 +25,14 @@ import net.dv8tion.jda.core.exceptions.RateLimitedException;
 public class Main {
    public static void main(String[] args){ try {
        // entry point
+       
+       File f = new File("token");
+       Scanner in = new Scanner(f);
+       String token = in.nextLine();
+       System.out.println(token);
        System.out.println("I am Bender, please insert girder");
        JDABuilder jdaBuilder = new JDABuilder(AccountType.BOT)
-               .setToken("TOKEN");
+               .setToken(token);
        jdaBuilder.addListener(new DiscordReaderWriter());
        jdaBuilder.addListener(new EventTester());
        JDA jda = jdaBuilder.buildBlocking();
